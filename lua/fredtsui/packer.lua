@@ -49,5 +49,44 @@ return require('packer').startup(function(use)
     }
 
   }
+
   --  use ('github/copilot.vim')
+
+  use({
+    "olimorris/codecompanion.nvim",
+    config = function()
+      require("codecompanion").setup({
+        strategies = {
+          chat = {
+            adapter = "qwen2"
+          },
+          inline = {
+            adapter = "qwen2"
+          }
+        },
+        adapters = {
+          qwen2 = function()
+            return require("codecompanion.adapters").extend("ollama", {
+              name = "qwen2:0.5b",
+              schema = {
+                model = {
+                  default = "qwen2:0.5b",
+                },
+                num_ctx = {
+                  default = 8096,
+                },
+                num_predict = {
+                  default = -1,
+                },
+              },
+            })
+          end
+        }
+      })
+    end,
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    }
+  })
 end)
