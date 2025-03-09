@@ -15,3 +15,8 @@ vim.opt.scrolloff = 8
 
 vim.g.mapleader = " "
 
+vim.diagnostic.config({
+  virtual_text = true
+})
+
+require 'lspconfig'.pyright.setup {}

@@ -19,17 +19,22 @@ return require('packer').startup(function(use)
 
   -- Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+
   use('nvim-treesitter/playground')
+
   use('nvim-lua/plenary.nvim')
+
   use('ThePrimeagen/harpoon')
+
   use('tpope/vim-fugitive')
+
   use {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
     requires = {
       -- LSP Support
       { 'neovim/nvim-lspconfig' }, -- Required
-      {                          -- Optional
+      {                            -- Optional
         'williamboman/mason.nvim',
         run = function()
           pcall(vim.cmd, 'MasonUpdate')
@@ -38,9 +43,9 @@ return require('packer').startup(function(use)
       { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
       -- Autocompletion
-      { 'hrsh7th/nvim-cmp' },   -- Required
+      { 'hrsh7th/nvim-cmp' },     -- Required
       { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-      { 'L3MON4D3/LuaSnip' },   -- Required
+      { 'L3MON4D3/LuaSnip' },     -- Required
     }
 
   }
