@@ -1,7 +1,9 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
+-- This is deprecated, using lazy.nvim right now, this is used only as a reference
 
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
+
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
