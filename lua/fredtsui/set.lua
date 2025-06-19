@@ -19,4 +19,4 @@ vim.diagnostic.config({
   virtual_text = true
 })
 
-require 'lspconfig'.pyright.setup {}
+-- require 'lspconfig'.pyright.setup {}
